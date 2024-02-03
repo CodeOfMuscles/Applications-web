@@ -1,0 +1,92 @@
+
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+section {
+  overflow: hidden;
+}
+section .container{
+  width: 100vw;
+  height: 100vh;
+  background: #ffb92a;
+}
+section .container .box{
+  width: 100%;
+  height: 100%;
+  background: #1c1917;
+  transform: rotate(45deg);
+  position: fixed;
+
+  left: 100px;
+  bottom: -200px;
+  
+  
+  
+  
+}
+
+section  .text  {
+  font-size: 30px;
+  color: #ffb92a;
+  position:relative;
+  top: -200px;
+  left: 75px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 300px;
+  height: 30px;
+  overflow: hidden;
+  
+
+}
+
+
+section .text .skills span{
+  margin-left: 10px;
+  display: flex;
+  flex-direction:column;
+  position: relative;
+  bottom: -38px;
+  animation: upWord 6s infinite steps(3) alternate;
+}
+
+
+span:first-child{
+  width:200px
+}
+span:last-child{
+  width: 80px
+}
+
+span:nth-child(2){
+  width: 110px;
+}
+
+ span::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:100%;
+  border-left:2px solid #ffb92a;
+  background: #1c1917;
+
+  animation: movText 2s infinite steps(10)
+  
+}
+
+
+@keyframes movText {
+  100%{margin-left: 100%}
+}
+
+@keyframes upWord {
+  100%{bottom: 75px;}
+}

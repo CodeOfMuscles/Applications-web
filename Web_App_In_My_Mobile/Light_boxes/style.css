@@ -1,0 +1,81 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color:#0e1538;
+  display: flex;
+  justify-content: center;
+  align-items: center
+  
+}
+
+section .container{
+  width:80%;
+  height: 80%;
+  position: relative;
+  inset: 10% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 75px;
+  
+}
+
+.container .box{
+  width: 200px;
+  height: 250px;
+  background: #0e1538;
+  position: relative;
+  padding-top: 50%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px
+}
+
+.box1::before{
+  content: "";
+  position: absolute;
+  inset:-3px;
+  background:linear-gradient(45deg,#00ccff, #0e1538, #0e1538, #d400d4);
+  box-shadow: 0 0 0 10px #000;
+  z-index:-2
+  
+}
+
+
+.box1::after{
+  content: "";
+  position: absolute;
+  inset:-3px;
+  background:linear-gradient(45deg,#00ccff, #0e1538, #0e1538, #d400d4);
+  filter: blur(20px);
+  z-index: -1;
+  
+}
+
+.box2::before{
+  content: "";
+  position: absolute;
+  inset:-3px;
+  background:linear-gradient(45deg,#00ff0a, #0e1538, #0e1538, #ffeb3b);
+  box-shadow: 0 0 0 10px #000;
+  z-index:-2
+  
+}
+
+
+.box2::after{
+  content: "";
+  position: absolute;
+  inset:-3px;
+  background:linear-gradient(45deg,#00ff0a, #0e1538, #0e1538, #ffeb3b);
+  filter: blur(20px);
+  z-index: -1;
+  
+}

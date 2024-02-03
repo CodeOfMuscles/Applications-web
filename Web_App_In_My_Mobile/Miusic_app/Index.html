@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- to link the font awsome with html pag -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <title>Ahmed.music</title>
+</head>
+
+<body>
+  <div class="musicApp"><!--app-->
+    <!--header section start-->
+    <div class="container">
+      <header class="Header">
+        <h1>AHMED.music</h1>
+        <div class="features">
+          <div class="tools">
+            <i class="fa-solid fa-magnifying-glass" onclick="SearchHandel()"></i>
+            <i class="fa-solid fa-palette" onclick="designBac()"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+          <div class="buttonsOfBar">
+            <button id="songs" onclick="songsHandel()">Songs</button>
+            <button id="songsPlayLists" onclick="songsPlayListsHandel()">Playlists</button>
+          </div>
+        </div>
+      </header>
+      <!--header section end-->
+      
+      <main>
+        <section class="display">
+          <div id="disContainer">
+            <div class="disSongs mainSec">
+              <div id="numOfSongs">
+                120 songs
+              </div>
+            </div>
+            <div class="disPlayLists mainSec">
+              songs play lists
+            </div>
+            <div class="mainSec search">
+              search
+            </div>
+      
+            <div class="disVideos mainSec">
+              video
+            </div>
+      
+            <div class="VideosPlayLists mainSec">
+              video playLists
+            </div>
+          </div>
+        </section>
+        <section class="more">
+          <div class="moreContainer">
+            More
+          </div>
+        </section>
+      </main>
+      
+      <!--fottor section start-->
+      <footer class="fottor">
+        <section class="interfaceSong">
+          <img src="">
+          <div>
+            <h5>the sings nam</h3>
+              <span>informations</span>
+          </div>
+        </section>
+        <section class="fottorButtons">
+          <span class="option songsOpt" onclick="songsFottorSec()">
+            <i class="fa-solid fa-music"></i>
+            <span>Songs</span>
+          </span>
+      
+          <span class="option videoOpt" onclick="vediosFottorSec()">
+            <i class="fa-solid fa-circle-play"></i>
+            <span>Video</span>
+          </span>
+      
+          <span class="option moreOpt" onclick="moreFottorSec()">
+            <i class="fa-solid fa-sliders"></i>
+            <span>More</span>
+          </span>
+        </section>
+      </footer>
+      <!--fottor section end-->
+    </div>
+    
+  </div>
+
+</body>
+<script src="Index.js"></script>
+</html>

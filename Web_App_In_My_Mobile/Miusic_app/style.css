@@ -1,0 +1,256 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: box-sizing;
+}
+
+:root{
+  --mainWidth : 410px;
+  --mainHeight : 757px;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+/*music app start */
+.musicApp{
+  position: relative;
+  overflow: hidden;
+  
+  
+  
+
+}
+.musicApp .container{
+  background: url("/ZMusic Player/backgrounds/bac2.jpg") no-repeat center center /cover;
+  width: var(--mainWidth);
+  height: var(--mainHeight);
+  margin: auto;
+  overflow-y: scroll;
+  
+}
+
+/*header section start */
+.Header {
+  margin: auto;
+  width: var(--mainWidth);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  /*backdrop-filter: blur(2px);*/
+  border-bottom: 1px solid #fff;
+  position: sticky;
+  top: -35px;
+  z-index: 100;
+  
+}
+
+header h1{
+  font-size: 16px;
+  font-weight: lighter;
+  color: #fff;
+  padding: 10px;
+}
+
+header .features{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.features .tools{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end ;
+  gap: 10px;
+}
+.features i{
+  font-size: 18px;
+  color: #EEEEEE;
+  padding:10px 15px 10px 15px;
+  border-radius: 10px;
+}
+header .buttonsOfBar{
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 30px 0 30px;
+  
+  
+}
+
+header .buttonsOfBar button{
+  background: transparent;
+  border: none;
+  color:#CAC5C5;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px;
+  transition: all .5s;
+}
+header button:first-child {
+  color: deepskyblue;
+  border-bottom: 3px solid deepskyblue;
+}header button:last-child {
+  color:#CAC5C5;
+  border-bottom: 3px solid transparent;
+}
+
+/*header section end*/
+
+/*search button start  Note:  to convert header style to search header style   */
+.searchHeader{
+  margin: auto;
+  width: var(--mainWidth);
+  height: 70px;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #fff;
+  display: flex;
+  gap: 10px;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.searchHeader input{
+  outline-style: none;
+  height: 30px;
+  background: transparent;
+  border : none;
+  font-size: 18px;
+  color:#fff;
+}
+
+.searchHeader input::placeholder{
+  color:#fff;
+  opacity: .5;
+}
+/*search button end */
+
+/*display section start */
+
+main .display{
+  width: 100%;
+  overflow-x: hidden;
+  margin-bottom: 120px;
+}
+
+main .display #disContainer{
+  display: flex;
+  width: 500%;
+  height: 100%;
+  position:relative;
+  left:0;
+  transition: all .2s;
+  color: #fff;
+  
+}
+main .display #disContainer .mainSec{
+  width: var(--mainWidth);
+  height: 100%;
+  backdrop-filter: blur(2px);
+  
+  
+  
+}
+main .display .disSongs{
+  display:flex;
+  flex-direction: column;
+  
+
+}
+main .display #numOfSongs{
+  padding: 15px;
+  color: skyblue;
+  border-bottom :.5px solid #5DCFF066;
+}
+
+main .display .song{
+  
+  padding:15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: .2px solid #0C0C0D17;
+}
+
+.display .song img{
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 20px;
+}
+
+.display .song .infoSong{
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+.display .infoSong .imgName{
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+}
+.display .infoSong .info{
+  color: deepskyblue;
+  font-size: 14px
+}
+
+.display .song i{
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+}
+
+main .more {
+  background: red;
+  height:calc(var(--mainHeight) - 120px );
+  width: var(--mainWidth);
+  position: absolute;
+  top: var(--mainHeight);
+  z-index: 110;
+  background: linear-gradient(45deg,deepskyblue 0px,purple 0px,deepskyblue )
+
+  
+}
+
+/*display section end */
+
+/*play Section start */
+.fottor{
+  width: var(--mainWidth);
+  position: absolute;
+  bottom: 0px;
+}
+.fottor .fottorButtons{
+  background-image:linear-gradient(90deg,#113C67,purple,#113C67);
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 40px
+}
+
+.fottorButtons .option{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+.fottorButtons .option:first-child{
+  color: deepskyblue;
+  
+}
+.fottorButtons .fa-circle-play{
+  font-size: 17px;
+  
+}
+
+/*play Section end */
+/*music app end*/

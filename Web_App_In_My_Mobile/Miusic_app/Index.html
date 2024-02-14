@@ -10,7 +10,7 @@
   <title>Ahmed.music</title>
 </head>
 
-<body>
+<body onload="mode()">
   <div class="musicApp"><!--app-->
     <!--header section start-->
     <div class="container">
@@ -49,43 +49,148 @@
               video
             </div>
       
-            <div class="VideosPlayLists mainSec">
+            <div class="videosPlayLists mainSec">
               video playLists
             </div>
+            
+            <div class="songsHistory mainSec">
+              History of songs
+            </div>
+            
+            <div class="videoHistory mainSec">
+              History of videos
+            </div>
+            
           </div>
         </section>
+        
+        
+        
+        
         <section class="more">
           <div class="moreContainer">
-            More
+            
+            <div class="optMore reference">
+              
+              <h3>Reference</h3>
+              
+              <div class="opt history" onclick="displayHistoryList()">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+              </div>
+              
+              <div class="opt favorite">
+                 <i class="fa-solid fa-heart"></i>
+                <span>Favorite</span>
+              </div>
+              
+              <div class="opt themes" onclick="changeThemeOfMreSec()">
+                <i class="fa-solid fa-palette"></i>
+                <span>Themes</span>
+              </div>
+            </div>
+            
+            
+            <div class="optMore tools">
+              <h3>Tools</h3>
+            </div>
+            <!-- about contact start-->
+            <div class="optMore about">
+              <h3>About</h3>
+              
+              <!-- portfolio of programmer start-->
+              <div class="opt portfolio">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Profolio</span>
+                <a href="Ahmed_Al_Jassem">Ahmed_Al_Jassem</a>
+              </div>
+              <!-- portfolio of programmer end-->
+              
+              <!-- linkedIn of programmer start-->
+              <div class="opt linkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linked In</span>
+                <a href="www.AHmedLinkedIn.com">www.AHmedLinkedIn.com</a>
+              </div>
+              <!-- linkedIn  of programmer end-->
+              
+              <!-- github of programmer start-->
+              <div class="opt github">
+                <i class="fa-brands fa-github"></i>
+                <span>Github</span>
+                <a href="https://github.com/dashboard">www.AhmedGithub.org</a>
+              </div>
+              
+              <!-- github  of programmer end-->
+              
+              <!-- facebook of programmer start-->
+              <div class="opt facebook">
+                <i class="fa-brands fa-facebook"></i>
+                <span>Facebook</span>
+                <a href="https://facebook.com">www.AHmed.com</a>
+              </div>
+              <!-- facebook of programmer end-->
+              
+              <!-- phone number of programmer start-->
+              <div class="opt phoneNumber">
+                <i class="fa-solid fa-phone"></i>
+                <span>Phone Number</span>
+                <input type="text" id="inputText" value="+371 21 6463" onclick="copyPhonNum()">
+                <i class="copyButt fa-solid fa-copy" onclick="copyPhonNum()"></i>
+              </div>
+              <!-- phone number of programmer end-->
+              
+            </div>
+            <!-- About end-->
           </div>
         </section>
+        
       </main>
       
       <!--fottor section start-->
       <footer class="fottor">
-        <section class="interfaceSong">
-          <img src="">
-          <div>
-            <h5>the sings nam</h3>
-              <span>informations</span>
+        
+        <section class="controller">
+          <img src="/ZMusic Player/images/songs images/ps12.jpg">
+          <div class="cont text">
+            <div id="movmentText">
+              
+              <span id="movmentName"></span>
+              
+              
+            </div>
+            <span id="info">&lt; Unknowns&gt;</span>
+          </div>
+          <div class="cont controlButts">
+            <i class="fa-solid fa-share"></i>
+            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-pause"></i>
+          </div>
+          <div class="cont loader">
+            
           </div>
         </section>
+        
+        
         <section class="fottorButtons">
-          <span class="option songsOpt" onclick="songsFottorSec()">
+          
+          <div class="option songsOpt" onclick="songsModeFottorSec()">
             <i class="fa-solid fa-music"></i>
             <span>Songs</span>
-          </span>
+          </div>
       
-          <span class="option videoOpt" onclick="vediosFottorSec()">
+          <div class="option videoOpt" onclick="vediosModeFottorSec()">
             <i class="fa-solid fa-circle-play"></i>
             <span>Video</span>
-          </span>
+          </div>
       
-          <span class="option moreOpt" onclick="moreFottorSec()">
+          <div class="option moreOpt" onclick="moreFottorSec()">
             <i class="fa-solid fa-sliders"></i>
             <span>More</span>
-          </span>
+          </div>
+          
         </section>
+        
       </footer>
       <!--fottor section end-->
     </div>
@@ -95,3 +200,5 @@
 </body>
 <script src="Index.js"></script>
 </html>
+
+<!--last apdate Web,Feb,14-->

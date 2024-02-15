@@ -51,11 +51,10 @@
             /* display: flex;
             justify-content: center;
             align-items: center; */
-            padding-top: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center
             overflow: auto;
-
-
-
         }
 
         main .container {
@@ -67,7 +66,7 @@
             justify-content: center;
             align-items: center;
             border-radius: 10px;
-
+            
 
         }
 
@@ -124,12 +123,15 @@
 
         .displayItems {
             width: 100%;
+            max-height: 500px;
             display: flex;
-            justify-content: center;
             align-items: center;
             flex-direction: column;
             gap: 10px;
             padding: 15px;
+            overflow-y:scroll;
+            
+            
         }
 
         .displayItems li {
@@ -139,6 +141,7 @@
             justify-content: space-around;
             align-items: center;
             padding: 10px 0 10px 0;
+            border-radius: 10px;
         }
 
         .displayItems li p {

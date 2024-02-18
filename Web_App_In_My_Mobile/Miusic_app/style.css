@@ -25,9 +25,6 @@ body{
   position: relative;
   overflow: hidden;
   border-radius: 15px;
-  
-  
-
 }
 .musicApp .container{
   background: url("/ZMusic Player/backgrounds/bac2.jpg") no-repeat center center /cover;
@@ -35,7 +32,6 @@ body{
   height: var(--mainHeight);
   margin: auto;
   overflow-y: scroll;
-  
 }
 
 /*header section start */
@@ -174,7 +170,6 @@ main .display #numOfSongs{
 }
 
 main .display .song{
-  
   padding:15px;
   display: flex;
   justify-content: space-between;
@@ -182,8 +177,20 @@ main .display .song{
   border-bottom: .2px solid #0C0C0D17;
 }
 
+main .display .songButt{
+  
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  gap: 10px;
+  position: relative;
+}
 
-
+main .display .songButt::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+}
 .display .song img{
   width: 60px;
   height: 60px;
@@ -192,20 +199,22 @@ main .display .song{
 }
 
 .display .song .infoSong{
-  width: 220px;
+  padding:10px;
+  max-width: 240px;
   display: flex;
   flex-direction: column;
-  gap: 10px
+  gap: 2px;
 }
 .display .infoSong .imgName{
   color: #fff;
   font-family: sans-serif;
   font-weight: 400;
-  font-size: 17px;
+  font-size: 15px;
 }
 .display .infoSong .info{
-  color: deepskyblue;
-  font-size: 14px
+  color: #FFFFFFA6;
+  font-size: 12px;
+  margin-left: 10px;
 }
 
 .display .song i{
@@ -428,4 +437,20 @@ main .reference .opt::after{
 /*play Section end */
 /*music app end*/
 
-/* last apdate Web,Feb,14 */
+/* last apdate Web,Feb,14 *
+m
+
+
+/* responsivenes */
+
+@media (max-width: 420px ) {
+  body{
+    background: red;
+  }
+  
+  .musicApp .container {
+    width: 100vw;
+    height: 100vh;
+
+  }
+}

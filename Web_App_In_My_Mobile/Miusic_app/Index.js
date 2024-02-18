@@ -116,31 +116,42 @@ function songsPlayListsHandel(){
 function displaySongs(songsArray){
   //console.log(disSongs)
   
-  function getSongName(song){
-    let lastPosition = song.split("/").length -1;
-    return song.split("/")[lastPosition];
+  function getSongName(songPath){//function to get song name fro song path
+    let lastPosition = songPath.split("/").length -1;
+    return songPath.split("/")[lastPosition];
   }
   
-  songsArray.forEach((song)=>{
+  
+  
+  songsArray.forEach((songPath)=>{
     //console.log(song);
-    let songName = getSongName(song)
-    let songInfoObject = {
-      songName : songName,
-      songImg : randomImages(generateImgName()),
-      artName : "Unknowns",
+    let songName = getSongName(songPath);// functionti filter song path to song name
+    
+    let audio = new Audio(songPath);// we use its here none to play song only to get duration info
+    //console.log(audio.src)
+    let songDuration = audio.duration// get duration of song 
+    
+    let songInfoObject = {//creat object carry all song info to reuse them
+      songName : songName,//put name
+      songImg : randomImages(generateImgName()),//put img
+      artName : "Unknowns",//put art name info
+      songPath : songPath,//put song path 
+      songDuration : songDuration,//put sing path
     }
-    let songInfoJson =JSON.stringify(songInfoObject);
+    //console.log(songDuration)
+    
+    let songInfoJson =JSON.stringify(songInfoObject);//convert js object to json data
+    
     document.querySelector(".disSongs").innerHTML += `
     
-        <div class="song" data='${songInfoJson}'>
-          <div class="songButt">
+        <div class="song">
+          <div class="songButt" onclick="playSong(event)" data='${songInfoJson}'>
             <img src="${songInfoObject.songImg}" class="songImg">
             <div class="infoSong">
-              <h3 class="imgName">${songInfoObject.songName.length<25?song:songInfoObject.songName.slice(0,25)+". . ."}</h3>
+              <h3 class="imgName">${songName.length<32?songName:songName.slice(0,32)+". . ."}</h3>
                         
-              <span class="info"> ${songInfoObject.artName}</span>
+              <span class="info"> ${songInfoObject.artName} ${songInfoObject.songDuration}</span>
             </div>
-            
           </div>
           
           <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -418,16 +429,51 @@ function moveText(songName) {
   },2000)
 }
 
-// functiin to play songs
-function playSong(param) {
-  console.log("ahme");
+
+
+
+
+// functions to play songs section
+
+// function to set current time of song
+function songDuration(song) {
+  let loader = document.querySelector(".loader");// select loder div 
+  let currentTime = (song.currentTime * 100) / song.duration;// convert second current time number to current time percentage number
+  
+  loader.style.width = `${currentTime}%`
+}
+
+// function to check up if loop or not from localstorage
+function cheakLoop(){
+  return true;
+}
+
+// main function in control sectiin to play song
+function playSong(event) {
+  let songButt = event.target;
+  let dataObject = JSON.parse(songButt.getAttribute("data"));
+  let song = new Audio();
+  song.src = dataObject.songPath;
+  song.onloadedmetadata = () => {
+    song.play();
+    setInterval(() => {
+      songDuration(song);
+      song.loop = cheakLoop()
+    }, 0)
+  }
+  
 }
 
 // FOTTOR FUNCTION CONTAINER END
 
-displaySongs(["/ZMusic Player/songs/يا ليته يعلم، فايا يونان Ya Laytahou Yaalam [Official Video] Faia(MP3_160K).mp3","/ZMusic Player/songs/أجمل أغاني لينا شماميان  Best Songs Lena Chamamyan(MP3_320K).mp3","/ZMusic Player/songs/Indila - Ainsi Bas La Vida (Lyrics_Letra)(MP3_160K).mp3","/ZMusic Player/songs/Lofi Fruits Music -Gangsta_s Paradise -  [Extended × Lofi  × Slowed × Reverb](MP3_160K).mp3","/ZMusic Player/songs/يا ليته يعلم، فايا يونان Ya Laytahou Yaalam [Official Video] Faia(MP3_160K).mp3","/ZMusic Player,,,,,/songs/أجمل أغاني لينا شماميان  Best Songs Lena Chamamyan(MP3_320K).mp3","/ZMusic Player/songs/Indila - Ainsi Bas La Vida (Lyrics_Letra)(MP3_160K).mp3","/ZMusic Player/songs/Lofi Fruits Music -Gangsta_s Paradise -  [Extended × Lofi  × Slowed × Reverb](MP3_160K).mp3","/ZMusic Player/songs/يا ليته يعلم، فايا يونان Ya Laytahou Yaalam [Official Video] Faia(MP3_160K).mp3","/ZMusic Player/songs/أجمل أغاني لينا شماميان  Best Songs Lena Chamamyan(MP3_320K).mp3","/ZMusic Player/songs/Indila - Ainsi Bas La Vida (Lyrics_Letra)(MP3_160K).mp3","/ZMusic Player/songs/Lofi Fruits Music -Gangsta_s Paradise -  [Extended × Lofi  × Slowed × Reverb](MP3_160K).mp3"]);
 
 
+
+
+
+displaySongs(["/ZMusic Player/songs/يا ليته يعلم، فايا يونان Ya Laytahou Yaalam [Official Video] Faia(MP3_160K).mp3","/ZMusic Player/songs/أجمل أغاني لينا شماميان  Best Songs Lena Chamamyan(MP3_320K).mp3","/ZMusic Player/songs/Indila - Ainsi Bas La Vida (Lyrics_Letra)(MP3_160K).mp3","/ZMusic Player/songs/Lofi Fruits Music -Gangsta_s Paradise -  [Extended × Lofi  × Slowed × Reverb](MP3_160K).mp3","/ZMusic Player/songs/يا ليته يعلم، فايا يونان Ya Laytahou Yaalam [Official Video] Faia(MP3_160K).mp3","/ZMusic Player,,,,,/songs/أجمل أغاني لينا شماميان  Best Songs Lena Chamamyan(MP3_320K).mp3","/ZMusic Player/songs/Indila - Ainsi Bas La Vida (Lyrics_Letra)(MP3_160K).mp3","/ZMusic Player/songs/Lofi Fruits Music -Gangsta_s Paradise -  [Extended × Lofi  × Slowed × Reverb](MP3_160K).mp3","/ZMusic Player/songs/يا ليته يعلم، فايا يونان Ya Laytahou Yaalam [Official Video] Faia(MP3_160K).mp3","/ZMusic Player/songs/أجمل أغاني لينا شماميان  Best Songs Lena Chamamyan(MP3_320K).mp3","/ZMusic Player/songs/Indila - Ainsi Bas La Vida (Lyrics_Letra)(MP3_160K).mp3","/ZMusic Player/songs/Lofi Fruits Music -Gangsta_s Paradise -  [Extended × Lofi  × Slowed × Reverb](MP3_160K).mp3","/ZMusic Player/songs/_علم_نفس  (1).mp3"]);
+
+console.log(getComputedStyle(document.body).getPropertyValue("width"))
 
 
 // last apdate Web,Feb,14

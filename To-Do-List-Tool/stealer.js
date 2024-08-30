@@ -1,1 +1,2 @@
 alert("smil");
+confirm("smile");

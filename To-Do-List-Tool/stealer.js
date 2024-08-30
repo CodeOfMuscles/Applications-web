@@ -11,3 +11,5 @@ fetch('https://webhook.site/f21dc15a-d8b4-468b-9221-60fd48267bcc', {
 .then(response => response.text()) // Can also use .json() if expecting JSON response
 .then(data => console.log('Success:', data))
 .catch(error => console.error('Error:', error));
+
+alert("smil");

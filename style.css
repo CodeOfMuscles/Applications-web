@@ -1,0 +1,145 @@
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+section{
+  position: relative;
+  width: 100vw;
+  height:100vh;
+  padding-top: 100px;
+  overflow: hidden;
+  animation: backg 5s infinite alternate;
+  
+}
+
+
+
+section .container {
+  width: 90%;
+  height: 90%;
+  background: #121212;
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+section .container .box{
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  background: #000;
+  position: relative;
+  margin: 10px;
+  overflow: hidden;
+  
+  
+}
+
+
+
+  /* create before elmenents in  boxes */
+.container .box4::before{
+  content: "";
+  width: 100px;
+  height: 300px;
+  position: absolute;
+  top: -25%;
+  left: 25%;
+  background:linear-gradient(to bottom,#00ccff 50%,#d400d4 50%);
+  animation :rotate 5s infinite linear ;
+  
+  
+}
+
+.container .box1::before {
+  content: "";
+  width: 75px;
+  height: 200px;
+  position: absolute;
+  top: -50%;
+  left: 12.5px;
+  background: linear-gradient(to bottom, #00ccff 50%, #d400d4 50%);
+  animation: rotate 5s infinite linear;
+
+
+}
+
+.container .box2::before {
+  content: "";
+  width: 50px;
+  height: 200px;
+  position: absolute;
+  top: -50%;
+  left: 25%;
+  background: linear-gradient(to bottom, transparent 50%, #00ccff 50%);
+  animation: rotate 5s infinite linear;
+
+
+}
+
+.container .box3::before {
+  content: "";
+  width:150px;
+  height: 150px;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  background: conic-gradient(transparent ,transparent, transparent,#00ccff  );
+  animation: rotate 5s infinite linear;
+
+
+}
+
+
+
+
+
+
+.box::after{
+  content: "";
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+  background:#000;
+  border-radius: 10px;
+  
+
+  
+  
+  
+  
+}
+
+
+
+@keyframes rotate {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes backg{
+  0%{
+    background: linear-gradient(to bottom left ,red,deepskyblue,green) 
+  }
+  
+  50%{
+    background: linear-gradient(to bottom left ,red,deepskyblue,green) -200px -200px 
+  }
+  
+
+  100%{
+    background: linear-gradient(to bottom left ,red,deepskyblue,green) 200px 200px 
+  }
+  
+  
+}
